@@ -34,29 +34,31 @@ The following directions are for cordova-cli (most people).
    offline：下载后再进行安装 `cordova plugin add YOUR_DIR`
 
 ### 支持平台
-
-		Android IOS
+- Android 
+- IOS
 
 ### Android API
 
 * js调用插件方法
 
-```js
+```javascript
 
     //第一步：订单在服务端签名生成订单信息，具体请参考官网进行签名处理
     var payInfo  = "xxxx";
 
     //第二步：调用支付插件        	
-    cordova.plugins.AliPay.pay(payInfo,function success(e){},function error(e){});
+    cordova.plugins.AliPay.pay(payInfo,function success(e){
+        var status = e.resultStatus;
+        //TODO
+    },function error(e){});
 
-	 //e.resultStatus  状态代码  e.result  本次操作返回的结果数据 e.memo 提示信息
-	 //e.resultStatus  9000  订单支付成功 ;8000 正在处理中  调用function success
-	 //e.resultStatus  4000  订单支付失败 ;6001  用户中途取消 ;6002 网络连接出错  调用function error
-	 //当e.resultStatus为9000时，请去服务端验证支付结果
-	 			/**
-				 * 同步返回的结果必须放置到服务端进行验证（验证的规则请看https://doc.open.alipay.com/doc2/
-				 * detail.htm?spm=0.0.0.0.xdvAU6&treeId=59&articleId=103665&
-				 * docType=1) 建议商户依赖异步通知
-				 */
+    //e.resultStatus  状态代码  e.result  本次操作返回的结果数据 e.memo 提示信息
+    //e.resultStatus  9000  订单支付成功 ;8000 正在处理中  调用function success
+    //e.resultStatus  4000  订单支付失败 ;6001  用户中途取消 ;6002 网络连接出错  调用function error
+    //当e.resultStatus为9000时，请去服务端验证支付结果
 
+    //第三步：验证支付正确性（服务器接受支付宝回调 + 客户端主动轮询）
 ```
+注意: 当e.resultStatus为9000时，请去服务端验证支付结果. [参考资料](https://doc.open.alipay.com/doc2/detail.htm?spm=0.0.0.0.xdvAU6&treeId=59&articleId=103665&docType=1)
+
+
