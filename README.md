@@ -1,10 +1,17 @@
-## cordova-plugin-alipay ##
+## cordova-plugin-wilhantian-alipay ##
+> 此插件修改自[offbye的支付宝插件](https://github.com/offbye/cordova-plugin-alipay)
+> 感谢`offbye`对开源软件的贡献
 
 Makes your Cordova application enable to use the [Alipay SDK](https://doc.open.alipay.com/docs/doc.htm?spm=a219a.7629140.0.0.hT44dE&treeId=54&articleId=104509&docType=1)
 for mobile payment with Alipay App or Mobile Web. Requires cordova-android 4.0 or greater.
 
 ### ChangeLogs
-  本cordova插件是基于支付宝App支付SDK的Demo实现
+ > 本cordova插件是基于支付宝App支付SDK的Demo实现
+
+  1.0.2: 
+- 修正`IOS`平台下resource资源引入错误问题
+
+  1.0.1(`offbye`版本): 
  - 升级支付宝SDK版本到20160825；
  - 修改了一些bug;
  - 支持Android和iOS Alipay SDK
@@ -20,11 +27,11 @@ The following directions are for cordova-cli (most people).
 * Add this plugin
 
   ```sh
-  cordova plugin add https://github.com/offbye/cordova-plugin-alipay.git --variable PARTNER_ID=[你的商户PID可以在账户中查询]
+  cordova plugin add https://github.com/wilhantian/cordova-plugin-alipay.git --variable PARTNER_ID=[你的商户PID可以在账户中查询]
   ```
   （对于android，可以不传PARTNER_ID）
 
-   offline：下载后再进行安装 `cordova plugin add  YOUR_DIR`
+   offline：下载后再进行安装 `cordova plugin add YOUR_DIR`
 
 ### 支持平台
 

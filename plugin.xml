@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova-plugin-offbye-alipay"
-    version="1.0.1">
+    id="cordova-plugin-wilhantian-alipay"
+    version="1.0.2">
     <name>AliPay</name>
 
     <preference name="PARTNER_ID"/>
     <js-module src="www/AliPay.js" name="AliPay">
-     		<clobbers target="cordova.plugins.AliPay" />
+     	<clobbers target="cordova.plugins.AliPay" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AliPay">
-                <param name="android-package" value="com.offbye.cordova.alipay.AliPay"/>
+                <param name="android-package" value="com.wilhantian.cordova.alipay.AliPay"/>
             </feature>
         </config-file>
          <config-file target="AndroidManifest.xml" parent="/manifest">
-		      <uses-permission android:name="android.permission.INTERNET" />
-		      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-		      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-		      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-		      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		    <uses-permission android:name="android.permission.INTERNET" />
+		    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+		    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-                 <!-- alipay sdk begin -->
-        <activity
-            android:name="com.alipay.sdk.app.H5PayActivity"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-            android:exported="false"
-            android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" >
-        </activity>
-        <!-- alipay sdk end -->
+            <!-- alipay sdk begin -->
+            <activity
+                android:name="com.alipay.sdk.app.H5PayActivity"
+                android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+                android:exported="false"
+                android:screenOrientation="behind"
+                android:windowSoftInputMode="adjustResize|stateHidden" >
+            </activity>
+            <!-- alipay sdk end -->
         </config-file>
         <source-file src="src/android/libs/alipaySdk-20160825.jar" target-dir="libs"/>
-        <source-file src="src/android/AliPay.java" target-dir="src/com/offbye/cordova/alipay" />
-        <source-file src="src/android/PayResult.java" target-dir="src/com/offbye/cordova/alipay" />
+        <source-file src="src/android/AliPay.java" target-dir="src/com/wilhantian/cordova/alipay" />
+        <source-file src="src/android/PayResult.java" target-dir="src/com/wilhantian/cordova/alipay" />
     </platform>
     <platform name="ios">
         <config-file target="config.xml" parent="/widget">
@@ -43,7 +43,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <feature name="AliPay">
             <param name="ios-package" value="AlipayPlugin" />
             <param name="onload" value="true" />
-          </feature>
+        </feature>
         </config-file>
 
         <config-file target="*-Info.plist" parent="CFBundleURLTypes">
@@ -67,7 +67,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <framework src="libc++.tbd" weak="true" />
 
         <framework src="src/ios/lib/AlipaySDK.framework" custom="true" />
-        <resource-file src="src/lib/AlipaySDK.bundle"/>
+        <resource-file src="src/ios/lib/AlipaySDK.bundle"/>
 
         <header-file src="src/ios/AlipayPlugin.h"/>
         <source-file src="src/ios/AlipayPlugin.m"/>

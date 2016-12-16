@@ -1,4 +1,4 @@
-package com.offbye.cordova.alipay;
+package com.wilhantian.cordova.alipay;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
