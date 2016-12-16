@@ -8,10 +8,13 @@ for mobile payment with Alipay App or Mobile Web. Requires cordova-android 4.0 o
 ### ChangeLogs
  > 本cordova插件是基于支付宝App支付SDK的Demo实现
 
-  1.0.2: 
-- 修正`IOS`平台下resource资源引入错误问题
++ 1.0.3:
+ - 简化插件调用方式. 原`cordova.plugins.AliPay.pay()`改为`plugins.AliPay.pay()` 
 
-  1.0.1(`offbye`版本): 
++ 1.0.2: 
+ - 修正`IOS`平台下resource资源引入错误问题
+
++ 1.0.1(`offbye`版本): 
  - 升级支付宝SDK版本到20160825；
  - 修改了一些bug;
  - 支持Android和iOS Alipay SDK
@@ -47,7 +50,7 @@ The following directions are for cordova-cli (most people).
     var payInfo  = "xxxx";
 
     //第二步：调用支付插件        	
-    cordova.plugins.AliPay.pay(payInfo,function success(e){
+    plugins.AliPay.pay(payInfo,function success(e){
         var status = e.resultStatus;
         //TODO
     },function error(e){});
