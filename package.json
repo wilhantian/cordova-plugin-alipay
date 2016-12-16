@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-wilhantian-alipay",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Makes your Cordova application enable to use the Alipay SDK",
     "cordova": {
         "id": "cordova-plugin-wilhantian-alipay",
