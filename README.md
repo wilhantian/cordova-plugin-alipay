@@ -40,7 +40,7 @@ The following directions are for cordova-cli (most people).
 - Android 
 - IOS
 
-### Android API
+### API
 
 * js调用插件方法
 
@@ -64,4 +64,6 @@ The following directions are for cordova-cli (most people).
 ```
 注意: 当e.resultStatus为9000时，请去服务端验证支付结果. [参考资料](https://doc.open.alipay.com/doc2/detail.htm?spm=0.0.0.0.xdvAU6&treeId=59&articleId=103665&docType=1)
 
-
+> 注意，2016年11月后支付宝更新了支付SDK和web控制台
+> 开发者需要到`账户中心-PID和公钥管理-mapi网关产品秘钥`中设置RSA公钥
+> 直接在`开发者中心-应用环境`中设置的RSA公钥无法与此插件SDK版本对应!!!
